@@ -3,3 +3,9 @@
 ```
 gradle run
 ```
+
+or
+
+```
+mvn exec:java
+```
