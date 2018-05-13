@@ -9,12 +9,6 @@ public class ConsoleGreeter extends Actor implements Greeter {
         System.out.println("Hello, "+ who);
     }
 
-    // Set up boilerplate
-    private final Greeter self;
-    public ConsoleGreeter() {
-        self = selfAs(Greeter.class);
-    }
-
     // lifetime observation hooks
     @Override
     protected void beforeStart() {
