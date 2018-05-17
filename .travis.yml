@@ -1,6 +1,5 @@
 language: java
 
 script:
-  - mvn compile
-  - mvn exec:java
+  # - mvn clean compile install exec:java
   - gradle run
