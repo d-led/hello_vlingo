@@ -7,5 +7,5 @@ gradle run
 or
 
 ```
-mvn exec:java
+mvn compile exec:java
 ```
