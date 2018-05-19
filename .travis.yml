@@ -1,5 +1,5 @@
 language: java
 
 script:
-  # - mvn clean compile install exec:java
-  - gradle run
+  - mvn clean compile exec:exec
+  - ./gradlew clean run

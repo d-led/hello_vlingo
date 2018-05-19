@@ -7,3 +7,9 @@
 ```
 gradle run
 ```
+
+or
+
+```
+mvn clean compile exec:exec
+```

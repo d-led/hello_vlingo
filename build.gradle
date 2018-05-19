@@ -33,7 +33,7 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 
-    mavenLocal()
+    mavenLocal() // for local vlingo-platform development
 
     maven {
         url  "https://dl.bintray.com/vlingo/vlingo-platform-java"
