@@ -6,6 +6,9 @@
  * user guide available at https://docs.gradle.org/4.7/userguide/tutorial_java_projects.html
  */
 
+
+// apply plugin: 'com.github.johnrengelman.shadow'
+
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
@@ -13,6 +16,8 @@ plugins {
     // Apply the application plugin to add support for building an application
     id 'application'
     id 'idea'
+
+    id 'com.github.johnrengelman.shadow' version '2.0.4'
 }
 
 // Define the main class for the application
@@ -37,4 +42,10 @@ repositories {
     maven {
         url  "https://dl.bintray.com/vlingo/vlingo-platform-java"
     }
+}
+
+shadowJar {
+   baseName = 'hello_vlingo'
+   classifier = null
+   version = null
 }

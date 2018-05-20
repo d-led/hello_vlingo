@@ -14,6 +14,12 @@ or
 mvn clean compile exec:exec
 ```
 
+or
+
+```
+gradle shadowJar && java -jar build/libs/hello_vlingo.jar
+```
+
 ## Structure
 
 - [main: App](src/main/java/github/dled/demo/App.java)

@@ -3,3 +3,4 @@ language: java
 script:
   - mvn clean compile exec:exec
   - ./gradlew clean run
+  - ./gradlew shadowJar && java -jar build/libs/hello_vlingo.jar
