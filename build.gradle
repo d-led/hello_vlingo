@@ -39,9 +39,10 @@ repositories {
 
     mavenLocal() // for local vlingo-platform development
 
-    maven {
-        url  "https://dl.bintray.com/vlingo/vlingo-platform-java"
-    }
+    // bintray URL used before publishing to jcenter
+    // maven {
+    //     url  "https://dl.bintray.com/vlingo/vlingo-platform-java"
+    // }
 }
 
 shadowJar {
