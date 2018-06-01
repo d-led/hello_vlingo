@@ -1,5 +1,6 @@
 package github.dled.demo;
 
+import io.vlingo.actors.Completes;
 import io.vlingo.actors.Stoppable;
 
 public interface Greeter extends Stoppable {
@@ -7,4 +8,5 @@ public interface Greeter extends Stoppable {
     void startBenchmark();
     void tick();
     void reportProgress();
+    Completes<Integer> answer();
 }

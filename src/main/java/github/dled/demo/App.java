@@ -1,5 +1,6 @@
 package github.dled.demo;
 
+import io.vlingo.actors.Completes;
 import io.vlingo.actors.Definition;
 import io.vlingo.actors.World;
 
@@ -33,7 +34,20 @@ public class App {
                 count.getAndIncrement();
             sw.dumpElapsedForCount(count.get(),"simple increment");
 
-            Thread.sleep(1000);
+            Completes<Integer> answer = greeter.answer();
+
+//            answer.andThen((value) -> System.out.println("The answer is ... "+value));
+
+            for (int i = 0; i < 10 || !answer.hasOutcome(); i++) {
+                Thread.sleep(100);
+                System.out.println("waiting for an answer...");
+            }
+
+            if (!answer.hasOutcome()) {
+                System.out.println("got no answer...");
+            } else {
+                System.out.println("The answer is ... "+answer.outcome());
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
