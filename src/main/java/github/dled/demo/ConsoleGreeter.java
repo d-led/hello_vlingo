@@ -1,8 +1,11 @@
 package github.dled.demo;
 
 import io.vlingo.actors.Actor;
+import io.vlingo.actors.BasicCompletes;
+import io.vlingo.actors.Completes;
 
 public class ConsoleGreeter extends Actor implements Greeter {
+    final Completes<Integer> completes = new BasicCompletes<>(0);
     Stopwatch sw;
     long count = 0;
 
@@ -25,6 +28,16 @@ public class ConsoleGreeter extends Actor implements Greeter {
     @Override
     public void reportProgress() {
         sw.dumpElapsedForCount(count, "ConsoleGreeter increment");
+    }
+
+    @Override
+    public Completes<Integer> answer() {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return completes().with(42);
     }
 
     // lifetime observation hooks
