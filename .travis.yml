@@ -2,5 +2,7 @@ language: java
 
 script:
   - mvn clean compile exec:exec
+  - rm -rf out target
   - ./gradlew clean run
+  - rm -rf out target
   - ./gradlew shadowJar && java -jar build/libs/hello_vlingo.jar
