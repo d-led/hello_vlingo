@@ -25,7 +25,7 @@ mainClassName = 'github.dled.demo.App'
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
-    compile 'io.vlingo:vlingo-actors:0.6.0'
+    compile 'io.vlingo:vlingo-actors:0.5.0'
     compile 'com.github.mfornos:humanize-slim:1.2.2'
 
     // Use JUnit test framework
