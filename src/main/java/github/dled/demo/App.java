@@ -1,8 +1,10 @@
 package github.dled.demo;
 
 import io.vlingo.actors.Completes;
+import io.vlingo.actors.Configuration;
 import io.vlingo.actors.Definition;
 import io.vlingo.actors.World;
+import io.vlingo.actors.plugin.mailbox.concurrentqueue.ConcurrentQueueMailboxPlugin;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -12,7 +14,17 @@ import java.util.concurrent.atomic.AtomicLong;
 public class App {
 
     public static void main(String[] args) {
-        final World world = World.startWithDefaults("playground");
+        final Configuration configuration =
+            Configuration
+              .define()
+                    .with(ConcurrentQueueMailboxPlugin.ConcurrentQueueMailboxPluginConfiguration
+                            .define()
+                            .defaultMailbox()
+                            .numberOfDispatchersFactor(1.5f)
+                            .dispatcherThrottlingCount(10));
+
+        // final World world = World.startWithDefaults("playground");
+        final World world = World.start("playground", configuration);
         try {
             final long N = 20_000_000;
 
