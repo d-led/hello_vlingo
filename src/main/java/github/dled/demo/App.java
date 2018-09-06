@@ -12,9 +12,10 @@ import java.util.concurrent.atomic.AtomicLong;
 public class App {
 
     public static void main(String[] args) {
-        final World world = World.startWithDefaults("playground");
+        // final World world = World.startWithDefaults("playground");
+        final World world = World.start("playground");
         try {
-            final long N = 20_000_000;
+            final long N = 100_000_000;
 
             final Greeter greeter = world.actorFor(Definition.has(ConsoleGreeter.class, Definition.NoParameters), Greeter.class);
 
