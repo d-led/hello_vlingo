@@ -1,6 +1,6 @@
 package github.dled.demo;
 
-import io.vlingo.actors.Completes;
+import io.vlingo.common.Completes;
 import io.vlingo.actors.Stoppable;
 
 public interface Greeter extends Stoppable {
