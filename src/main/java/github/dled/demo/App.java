@@ -17,7 +17,6 @@ public class App {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            // waits for quiescence
             world.terminate();
         }
     }
