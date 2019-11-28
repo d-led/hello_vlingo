@@ -22,10 +22,9 @@ public class App {
     }
 
     public static void thingDemo(World world) {
-        final Thingy thing = world
-            .actorFor(
-                Definition.has(Thing.class, Definition.NoParameters),
-                Thingy.class
+        final Thingy thing = world.actorFor(
+            Thingy.class,
+            Thing.class
         );
 
         thing.jump();
@@ -39,7 +38,10 @@ public class App {
     public static void benchmarkAndDemo(World world) throws InterruptedException {
         final long N = 100_000_000;
 
-        final Greeter greeter = world.actorFor(Definition.has(ConsoleGreeter.class, Definition.NoParameters), Greeter.class);
+        final Greeter greeter = world.actorFor(
+            Greeter.class,
+            ConsoleGreeter.class
+        );
 
         greeter.greet(System.getProperty("user.name"));
 

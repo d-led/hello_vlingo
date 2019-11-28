@@ -26,21 +26,21 @@ plugins {
     id 'application'
     id 'idea'
 
+    id "com.github.johnrengelman.shadow" version "5.2.0"
+
     // id "com.github.johnrengelman.shadow" version "2.0.4"
 }
-
-apply plugin: "com.github.johnrengelman.shadow"
 
 // Define the main class for the application
 mainClassName = 'github.dled.demo.App'
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
-    compile 'io.vlingo:vlingo-actors:0.7.4'
-    compile 'com.github.mfornos:humanize-slim:1.2.2'
+    implementation 'io.vlingo:vlingo-actors:0.9.1-RC2'
+    implementation 'com.github.mfornos:humanize-slim:1.2.2'
 
     // Use JUnit test framework
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }
 
 // In this section you declare where to find the dependencies of your project
@@ -49,15 +49,10 @@ repositories {
     jcenter()
 
     mavenLocal() // for local vlingo-platform development
-
-    // bintray URL used before publishing to jcenter
-    // maven {
-    //     url  "https://dl.bintray.com/vlingo/vlingo-platform-java"
-    // }
 }
 
 shadowJar {
-   baseName = 'hello_vlingo'
+   archiveBaseName = 'hello_vlingo'
    classifier = null
-   version = null
+   archiveVersion = null
 }
