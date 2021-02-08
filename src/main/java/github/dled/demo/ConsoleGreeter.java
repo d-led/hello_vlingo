@@ -1,11 +1,10 @@
 package github.dled.demo;
 
 import io.vlingo.actors.Actor;
-import io.vlingo.common.BasicCompletes;
 import io.vlingo.common.Completes;
 
 public class ConsoleGreeter extends Actor implements Greeter {
-    final Completes<Integer> completes = new BasicCompletes<>(0);
+    final Completes<Integer> completes = Completes.withSuccess(0);
     Stopwatch sw;
     long count = 0;
 
