@@ -2,7 +2,7 @@
 
 > checking out the [Vlingo Actor Model](https://github.com/vlingo/vlingo-actors) platform
 
-[![Build Status](https://travis-ci.org/d-led/hello_vlingo.svg?branch=master)](https://travis-ci.org/d-led/hello_vlingo)
+[![Build Status](https://travis-ci.com/d-led/hello_vlingo.svg?branch=master)](https://travis-ci.com/d-led/hello_vlingo)
 
 ```
 gradle run
