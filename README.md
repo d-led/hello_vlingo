@@ -4,19 +4,19 @@
 
 [![Build Status](https://travis-ci.com/d-led/hello_vlingo.svg?branch=master)](https://travis-ci.com/d-led/hello_vlingo)
 
-```
+```bash
 gradle run
 ```
 
 or
 
-```
+```bash
 mvn clean compile exec:exec
 ```
 
 or
 
-```
+```bash
 gradle shadowJar && java -jar build/libs/hello_vlingo.jar
 ```
 
