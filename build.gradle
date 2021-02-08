@@ -14,7 +14,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "com.github.jengelman.gradle.plugins:shadow:2.0.4"
+    classpath "com.github.jengelman.gradle.plugins:shadow:6.1.0"
   }
 }
 
@@ -54,6 +54,7 @@ repositories {
 }
 
 shadowJar {
+   mainClassName = 'github.dled.demo.App'
    archiveBaseName = 'hello_vlingo'
    classifier = null
    archiveVersion = null
