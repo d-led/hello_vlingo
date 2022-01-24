@@ -1,7 +1,7 @@
 package github.dled.demo;
 
-import io.vlingo.common.Completes;
-import io.vlingo.actors.Stoppable;
+import io.vlingo.xoom.common.Completes;
+import io.vlingo.xoom.actors.Stoppable;
 
 public interface Greeter extends Stoppable {
     void greet(String who);

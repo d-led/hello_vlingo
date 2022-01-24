@@ -38,7 +38,7 @@ application {
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
-    implementation 'io.vlingo:vlingo-actors:1.5.0'
+    implementation 'io.vlingo.xoom:xoom-actors:1.9.0'
     implementation 'com.github.mfornos:humanize-slim:1.2.2'
 
     // Use JUnit test framework
@@ -47,10 +47,12 @@ dependencies {
 
 // In this section you declare where to find the dependencies of your project
 repositories {
-    // Use jcenter for resolving your dependencies.
     jcenter()
-
-    mavenLocal() // for local vlingo-platform development
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url "https://repo1.maven.org/maven2/"
+    }
 }
 
 shadowJar {

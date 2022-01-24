@@ -1,6 +1,6 @@
 package github.dled.demo;
 
-import io.vlingo.common.Completes;
+import io.vlingo.xoom.common.Completes;
 
 public interface Thingy {
     void jump();

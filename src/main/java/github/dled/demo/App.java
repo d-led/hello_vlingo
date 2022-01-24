@@ -1,8 +1,8 @@
 package github.dled.demo;
 
-import io.vlingo.common.Completes;
-import io.vlingo.actors.Definition;
-import io.vlingo.actors.World;
+import io.vlingo.xoom.common.Completes;
+import io.vlingo.xoom.actors.Definition;
+import io.vlingo.xoom.actors.World;
 
 import java.util.concurrent.atomic.AtomicLong;
 

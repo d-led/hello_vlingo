@@ -1,7 +1,7 @@
 package github.dled.demo;
 
-import io.vlingo.actors.Actor;
-import io.vlingo.common.Completes;
+import io.vlingo.xoom.actors.Actor;
+import io.vlingo.xoom.common.Completes;
 
 public class ConsoleGreeter extends Actor implements Greeter {
     Stopwatch sw;

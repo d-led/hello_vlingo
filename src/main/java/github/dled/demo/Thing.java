@@ -1,8 +1,8 @@
 package github.dled.demo;
 
-import io.vlingo.actors.Actor;
-import io.vlingo.common.Completes;
-import io.vlingo.common.Scheduled;
+import io.vlingo.xoom.actors.Actor;
+import io.vlingo.xoom.common.Completes;
+import io.vlingo.xoom.common.Scheduled;
 
 public class Thing extends Actor implements Thingy, Scheduled {
     @Override
