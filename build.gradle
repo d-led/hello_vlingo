@@ -27,6 +27,7 @@ plugins {
     id 'idea'
 
     id "com.github.johnrengelman.shadow" version "5.2.0"
+    id "org.mikeneck.graalvm-native-image" version "v1.4.1"
 
     // id "com.github.johnrengelman.shadow" version "2.0.4"
 }
@@ -59,4 +60,32 @@ shadowJar {
    archiveBaseName = 'hello_vlingo'
    classifier = null
    archiveVersion = null
+}
+
+tasks.named("installNativeImage") { onlyIf { false } }
+
+import org.mikeneck.graalvm.BuildTypeSelector
+
+nativeImage {
+  graalVmHome = System.getenv("GRAALVM_HOME") ?: System.getenv("JAVA_HOME")
+  mainClass = 'github.dled.demo.App' // Deprecated, use buildType.executable.main as follows instead.
+  buildType { BuildTypeSelector build ->
+    build.executable {
+      main = 'github.dled.demo.App'
+    }
+  }
+  executableName = 'demo'
+  outputDirectory = file("$buildDir/bin")
+  arguments {
+    add '--no-fallback'
+    add '--enable-all-security-services'
+    // add options.traceClassInitialization('com.example.MyDataProvider,com.example.MyDataConsumer')
+    // add '--initialize-at-run-time=com.example.runtime'
+    add '--report-unsupported-elements-at-runtime'
+  }
+}
+
+generateNativeImageConfig {
+  enabled = true
+  byRunningApplicationWithoutArguments()
 }
